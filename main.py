@@ -23,8 +23,8 @@ def main():
         '-m',
         '--model',
         type=str,
-        default='70b',
-        choices=['7b', '13b', '70b'],
+        default='llama-2-70b',
+        choices=['llama-2-7b', 'llama-2-13b', 'llama-2-70b'],
         help='Model'
     )
 

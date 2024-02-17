@@ -57,9 +57,9 @@ def write_json_file(output_file_path, data, model):
 
 
 def entity_wikipedia_url_extractor(model, dataset):
-    # INPUT_FILE_PATH = '../datasets/test_datasets/' + dataset + '_test.json'
+    # INPUT_FILE_PATH = 'datasets/test_datasets/' + dataset + '_test.json'
     INPUT_FILE_PATH = 'datasets/test_datasets/test.json'
-    OUTPUT_FILE_PATH = 'result/' + dataset + 'wikipedia_url.json'
+    OUTPUT_FILE_PATH = 'result/' + dataset + '/' + model + '/wikipedia_url.json'
     data = read_json_file(INPUT_FILE_PATH)
-    model = "meta/llama-2-" + model + "-chat"
+    model = "meta/" + model + "-chat"
     write_json_file(OUTPUT_FILE_PATH, data, model)

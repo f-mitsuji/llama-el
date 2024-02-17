@@ -42,7 +42,7 @@ OUTPUT:
 
 Explanation:
 
-The input text mentions "bahamas". The named entity recognized is "Bahamas", which is a country. The corresponding Wikipedia URL is "https://en.wikipedia.org/wiki/Bahamian_dollar", which provides information on},
+The input text mentions " Bahamas". The named entity recognized is "Bahamas", which is a country. The Wikipedia URL provided is for the article on the Bahamian dollar, which is the official currency of the Bahamas.},
 {"index": 5, Sure, here are the named entities and their corresponding Wikipedia URLs for the given text:
 
 INPUT: what does the letters eu stand for?

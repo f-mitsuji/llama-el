@@ -23,8 +23,8 @@ def write_json_file(output_file_path, data, model, dataset):
         for i, item in enumerate(data, start=1):
             input_text = item.get("utterance", None)
 
-            if input_text is not None and input_text != "n/a":
-                output = ChatCompletion(
+            if input_text is not None and input_text != "n/a":  # データセットのEL対象文に空値と'n/a'がある
+                output = ChatCompletion(                        # その場合要素が空値のデータを返す
                     model,
                     prompt=get_prompt(dataset, input_text),
                     system_prompt="Extract named entities from the following text and provide their Wikipedia URLs"

@@ -1,0 +1,167 @@
+[
+  {
+    "question_id": "WebQTrn-0",
+    "utterance": "what is the name of justin bieber brother?",
+    "entities_fb": ["m.05zppz", "m.06w2sn5"],
+    "entities": ["Q34086", "Q44148"],
+    "main_entity_text": "Justin Bieber",
+    "main_entity": "Q34086",
+    "main_entity_fb": "m.06w2sn5",
+    "main_entity_tokens": "justin bieber",
+    "main_entity_pos": [20, 33]
+  },
+  {
+    "question_id": "WebQTrn-1",
+    "utterance": "what character did natalie portman play in star wars?",
+    "entities_fb": ["m.0ddt_", "m.09l3p"],
+    "entities": ["Q165713", "Q37876"],
+    "main_entity_text": "Natalie Portman",
+    "main_entity": "Q37876",
+    "main_entity_fb": "m.09l3p",
+    "main_entity_tokens": "natalie portman",
+    "main_entity_pos": [19, 34]
+  },
+  {
+    "question_id": "WebQTrn-3",
+    "utterance": "what country is the grand bahama island in?",
+    "entities_fb": ["m.03st9j"],
+    "entities": ["Q866345"],
+    "main_entity_text": "Grand Bahama",
+    "main_entity": "Q866345",
+    "main_entity_fb": "m.03st9j",
+    "main_entity_tokens": "grand bahama island",
+    "main_entity_pos": [20, 39]
+  },
+  {
+    "question_id": "WebQTrn-4",
+    "utterance": "what kind of money to take to bahamas?",
+    "entities_fb": ["m.0160w"],
+    "entities": ["Q778"],
+    "main_entity_text": "Bahamas",
+    "main_entity": "Q778",
+    "main_entity_fb": "m.0160w",
+    "main_entity_tokens": "bahamas",
+    "main_entity_pos": [30, 37]
+  },
+  {
+    "question_id": "WebQTrn-5",
+    "utterance": "what character did john noble play in lord of the rings?",
+    "entities_fb": ["m.02fgm7", "m.017gm7"],
+    "entities": ["Q312399", "Q164963"],
+    "main_entity_text": "John Noble",
+    "main_entity": "Q312399",
+    "main_entity_fb": "m.02fgm7",
+    "main_entity_tokens": "john noble",
+    "main_entity_pos": [19, 29]
+  },
+  {
+    "question_id": "WebQTrn-6",
+    "utterance": "who does joakim noah play for?",
+    "entities_fb": ["m.0c2yrf"],
+    "entities": ["Q311735"],
+    "main_entity_text": "Joakim Noah",
+    "main_entity": "Q311735",
+    "main_entity_fb": "m.0c2yrf",
+    "main_entity_tokens": "joakim noah",
+    "main_entity_pos": [9, 20]
+  },
+  {
+    "question_id": "WebQTrn-7",
+    "utterance": "where are the nfl redskins from?",
+    "entities_fb": ["m.084l5"],
+    "entities": ["Q212654"],
+    "main_entity_text": "Washington Redskins",
+    "main_entity": "Q212654",
+    "main_entity_fb": "m.084l5",
+    "main_entity_tokens": "redskins",
+    "main_entity_pos": [18, 26]
+  },
+  {
+    "question_id": "WebQTrn-8",
+    "utterance": "where did saki live?",
+    "entities_fb": ["m.07484"],
+    "entities": ["Q311526"],
+    "main_entity_text": "Saki",
+    "main_entity": "Q311526",
+    "main_entity_fb": "m.07484",
+    "main_entity_tokens": "saki",
+    "main_entity_pos": [10, 14]
+  },
+  {
+    "question_id": "WebQTrn-9",
+    "utterance": "how old is sacha baron cohen?",
+    "entities_fb": ["m.0c9c0"],
+    "entities": ["Q29055"],
+    "main_entity_text": "Sacha Baron Cohen",
+    "main_entity": "Q29055",
+    "main_entity_fb": "m.0c9c0",
+    "main_entity_tokens": "sacha baron cohen",
+    "main_entity_pos": [11, 28]
+  },
+  {
+    "question_id": "WebQTrn-11",
+    "utterance": "what time zone am i in cleveland ohio?",
+    "entities_fb": ["m.01sn3"],
+    "entities": ["Q37320"],
+    "main_entity_text": "Cleveland",
+    "main_entity": "Q37320",
+    "main_entity_fb": "m.01sn3",
+    "main_entity_tokens": "cleveland ohio",
+    "main_entity_pos": [23, 37]
+  },
+  {
+    "question_id": "WebQTrn-12",
+    "utterance": "who did draco malloy end up marrying?",
+    "entities_fb": ["m.0c2m4"],
+    "entities": ["Q179641"],
+    "main_entity_text": "Draco Malfoy",
+    "main_entity": "Q179641",
+    "main_entity_fb": "m.0c2m4",
+    "main_entity_tokens": "draco",
+    "main_entity_pos": [8, 13]
+  },
+  {
+    "question_id": "WebQTrn-13",
+    "utterance": "which countries border the us?",
+    "entities_fb": ["m.09c7w0", "m.01mp"],
+    "entities": ["Q30", null],
+    "main_entity_text": "United States of America",
+    "main_entity": "Q30",
+    "main_entity_fb": "m.09c7w0",
+    "main_entity_tokens": "us",
+    "main_entity_pos": [27, 29]
+  },
+  {
+    "question_id": "WebQTrn-14",
+    "utterance": "where is rome italy located on a map?",
+    "entities_fb": ["m.06c62"],
+    "entities": ["Q220"],
+    "main_entity_text": "Rome",
+    "main_entity": "Q220",
+    "main_entity_fb": "m.06c62",
+    "main_entity_tokens": "rome italy",
+    "main_entity_pos": [9, 19]
+  },
+  {
+    "question_id": "WebQTrn-15",
+    "utterance": "what is nina dobrev nationality?",
+    "entities_fb": ["m.027nwk2"],
+    "entities": ["Q183439"],
+    "main_entity_text": "Nina Dobrev",
+    "main_entity": "Q183439",
+    "main_entity_fb": "m.027nwk2",
+    "main_entity_tokens": "nina dobrev",
+    "main_entity_pos": [8, 19]
+  },
+  {
+    "question_id": "WebQTrn-17",
+    "utterance": "which kennedy died first?",
+    "entities_fb": ["m.0fbrl"],
+    "entities": ["Q34821"],
+    "main_entity_text": "John F. Kennedy",
+    "main_entity": "Q9696",
+    "main_entity_fb": "m.0d3k14",
+    "main_entity_tokens": "kennedy",
+    "main_entity_pos": [6, 13]
+  }
+]

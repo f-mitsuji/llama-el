@@ -63,4 +63,3 @@ def entity_wikipedia_url_extractor(model, dataset):
     data = read_json_file(INPUT_FILE_PATH)
     model = "meta/llama-2-" + model + "-chat"
     write_json_file(OUTPUT_FILE_PATH, data, model)
-    write_json_file(OUTPUT_FILE_PATH, data, model)

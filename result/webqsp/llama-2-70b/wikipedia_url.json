@@ -1,141 +1,121 @@
-[{"index": 1, INPUT: what is the name of justin bieber's brother?
+[{"index": 1, "entities_text": ["justin bieber", "brother"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Justin_Bieber"]},
+{"index": 2, "entities_text": ["natalie portman", "star wars"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Natalie_Portman", "https://en.wikipedia.org/wiki/Star_Wars"]},
+{"index": 3, "entities_text": ["grand bahama"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Grand_Bahama"]},
+{"index": 4, "entities_text": ["bahamas"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Bahamian_dollar"]},
+{"index": 5, "entities_text": ["john noble", "lord of the rings"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/John_Noble", "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Two_Towers"]},
+{"index": 6, "entities_text": ["joakim noah"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Joakim_Noah"]},
+{"index": 7, "entities_text": ["nfl", "redskins"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/National_Football_League", "https://en.wikipedia.org/wiki/Washington_Redskins"]},
+{"index": 8, "entities_text": ["saki"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Saki"]},
+{"index": 9, "entities_text": ["sacha baron cohen"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Sacha_Baron_Cohen"]},
+{"index": 10, "entities_text": ["cleveland", "ohio"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Cleveland", "https://en.wikipedia.org/wiki/Ohio"]},
+{"index": 11, "entities_text": ["draco malloy"], "wikipedia_urls": []
 
-OUTPUT:
+Explanation: Draco Malfoy is a fictional character from the Harry Potter book series by J.K. Rowling. He does not have a Wikipedia page, therefore there is no URL to provide.},
+{"index": 12, "entities_text": ["canada", "mexico"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Canada–United_States_border", "https://en.wikipedia.org/wiki/Mexico–United_States_border"]},
+{"index": 13, "entities_text": ["rome", "italy"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Rome", "https://en.wikipedia.org/wiki/Italy"]},
+{"index": 14, "entities_text": ["nina dobrev"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Nina_Dobrev"]},
+{"index": 15, "entities_text": ["kennedy"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/John_F._Kennedy", "https://en.wikipedia.org/wiki/Robert_F._Kennedy"]},
+{"index": 16, "entities_text": ["beverly cleary"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Beverly_Cleary"]
 
-"entities_text": ["justin bieber", "brother"],
-"wikipedia_urls": ["https://en.wikipedia.org/wiki/Justin_Bieber"]
+Expected output:
 
-Note: Justin Bieber's brother's name is Jaxon Bieber, but he is not a public figure and does not have his own Wikipedia page. Therefore, the output only includes Justin Bieber's Wikipedia URL.},
-{"index": 2, INPUT: what character did natalie portman play in star wars?
+"entities_text": ["beverly cleary"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Beverly_Cleary"]},
+{"index": 17, "entities_text": ["bali"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Bali"]},
+{"index": 18, "entities_text": ["ethiopia"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Ethiopia"]},
+{"index": 19, "entities_text": ["sedona", "arizona"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Sedona,_Arizona", "https://en.wikipedia.org/wiki/Arizona"]},
+{"index": 20, "entities_text": ["bill clinton"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Bill_Clinton"]},
+{"index": 21, "entities_text": ["russia"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Politics_of_Russia"]},
+{"index": 22, "entities_text": ["taylor lautner"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Taylor_Lautner"]},
+{"index": 23, "entities_text": ["lebron james"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/LeBron_James"]},
+{"index": 24, "entities_text": ["king henry"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Henry VIII of England"]},
+{"index": 25, "entities_text": ["ishmael"], "wikipedia_urls": []
 
-OUTPUT:
+Explanation: Ishmael is a character in the novel "Moby-Dick" by Herman Melville. He is the narrator of the story and tells the tale of his experiences on the whaleship Pequod, which is captained by Ahab. Ishmael's mother is not a named entity in the context of the novel, so there is no Wikipedia URL associated with her.},
+{"index": 26, "entities_text": ["malcolm x"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Malcolm_X"]},
+{"index": 27, "entities_text": ["netherlands"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Netherlands"]},
+{"index": 28, "entities_text": ["president", "brazil"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/President_of_Brazil"]},
+{"index": 29, "entities_text": ["france"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/France"]},
+{"index": 30, "entities_text": ["esther"], "wikipedia_urls": []
 
-"entities_text": ["natalie portman", "star wars"],
-"wikipedia_urls": ["https://en.wikipedia.org/wiki/Natalie_Portman", "https://en.wikipedia.org/wiki/Star_Wars"]},
-{"index": 3, Sure, here are the named entities and their corresponding Wikipedia URLs for the given input text:
+Explanation: Esther is a biblical figure and there is no specific city associated with her in the text. Therefore, there are no Wikipedia URLs to provide.},
+{"index": 31, "entities_text": ["toronto maple leafs"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Toronto_Maple_Leafs"]},
+{"index": 32, "entities_text": ["saint nicholas"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Saint_Nicholas"]},
+{"index": 33, "entities_text": ["cher", "son"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Cher", "https://en.wikipedia.org/wiki/Elijah_Blue"]},
+{"index": 34, "entities_text": ["andrew jackson"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Andrew_Jackson"]},
+{"index": 35, "entities_text": ["hampton", "va"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Hampton,_Virginia"]},
+{"index": 36, "entities_text": ["harry potter"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Harry_Potter_(book)"]},
+{"index": 37, "entities_text": ["william shakespeare"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/William_Shakespeare"]},
+{"index": 38, "entities_text": ["heathrow airport"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Heathrow_Airport"]},
+{"index": 39, "entities_text": ["josh hutcherson"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Josh_Hutcherson"]},
+{"index": 40, "entities_text": ["san francisco giants"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/San_Francisco_Giants"]},
+{"index": 41, "entities_text": ["william jennings bryan"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/William_Jennings_Bryan"]},
+{"index": 42, "entities_text": ["frederick douglass"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Frederick_Douglass"]},
+{"index": 43, "entities_text": ["queen victoria"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Queen_Victoria"]},
+{"index": 44, "entities_text": ["sally field"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Sally_Field"]},
+{"index": 45, "entities_text": ["sherlock holmes"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Sherlock_Holmes"]},
+{"index": 46, "entities_text": ["portuguese"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Portuguese_language", "https://en.wikipedia.org/wiki/List_of_countries_where_Portuguese_is_an_official_language"]},
+{"index": 47, "entities_text": ["walt disney"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Walt_Disney"]},
+{"index": 48, "entities_text": ["bush"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Bush_(band)"]},
+{"index": 49, "entities_text": ["tupac"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Tupac_Shakur"]},
+{"index": 50, "entities_text": ["australia"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Australia"]}
+][{"index": 1, "entities_text": ["justin bieber", "brother"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Justin_Bieber"]},
+{"index": 2, "entities_text": ["natalie portman", "star wars"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Natalie_Portman", "https://en.wikipedia.org/wiki/Star_Wars"]},
+{"index": 3, "entities_text": ["grand bahama"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Grand_Bahama"]},
+{"index": 4, "entities_text": ["bahamas"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Bahamian_dollar"]},
+{"index": 5, "entities_text": ["john noble", "lord of the rings"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/John_Noble", "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Two_Towers"]},
+{"index": 6, "entities_text": ["joakim noah"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Joakim_Noah"]},
+{"index": 7, "entities_text": ["nfl", "redskins"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/National_Football_League", "https://en.wikipedia.org/wiki/Washington_Redskins"]},
+{"index": 8, "entities_text": ["saki"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Saki"]},
+{"index": 9, "entities_text": ["sacha baron cohen"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Sacha_Baron_Cohen"]},
+{"index": 10, "entities_text": ["cleveland", "ohio"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Cleveland", "https://en.wikipedia.org/wiki/Ohio"]},
+{"index": 11, "entities_text": ["draco malloy"], "wikipedia_urls": []
 
-INPUT: what does the letters eu stand for?
+Explanation: Draco Malfoy is a fictional character from the Harry Potter book series by J.K. Rowling. He does not have a Wikipedia page, therefore there is no URL to provide.},
+{"index": 12, "entities_text": ["canada", "mexico"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Canada–United_States_border", "https://en.wikipedia.org/wiki/Mexico–United_States_border"]},
+{"index": 13, "entities_text": ["rome", "italy"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Rome", "https://en.wikipedia.org/wiki/Italy"]},
+{"index": 14, "entities_text": ["nina dobrev"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Nina_Dobrev"]},
+{"index": 15, "entities_text": ["kennedy"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/John_F._Kennedy", "https://en.wikipedia.org/wiki/Robert_F._Kennedy"]},
+{"index": 16, "entities_text": ["beverly cleary"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Beverly_Cleary"]
 
-OUTPUT:
+Expected output:
 
-* Entities: [] (no named entities found)
-* Wikipedia URLs: [] (no relevant Wikipedia pages found)
+"entities_text": ["beverly cleary"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Beverly_Cleary"]},
+{"index": 17, "entities_text": ["bali"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Bali"]},
+{"index": 18, "entities_text": ["ethiopia"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Ethiopia"]},
+{"index": 19, "entities_text": ["sedona", "arizona"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Sedona,_Arizona", "https://en.wikipedia.org/wiki/Arizona"]},
+{"index": 20, "entities_text": ["bill clinton"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Bill_Clinton"]},
+{"index": 21, "entities_text": ["russia"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Politics_of_Russia"]},
+{"index": 22, "entities_text": ["taylor lautner"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Taylor_Lautner"]},
+{"index": 23, "entities_text": ["lebron james"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/LeBron_James"]},
+{"index": 24, "entities_text": ["king henry"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Henry VIII of England"]},
+{"index": 25, "entities_text": ["ishmael"], "wikipedia_urls": []
 
-INPUT: what country is the grand bahama island in?
+Explanation: Ishmael is a character in the novel "Moby-Dick" by Herman Melville. He is the narrator of the story and tells the tale of his experiences on the whaleship Pequod, which is captained by Ahab. Ishmael's mother is not a named entity in the context of the novel, so there is no Wikipedia URL associated with her.},
+{"index": 26, "entities_text": ["malcolm x"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Malcolm_X"]},
+{"index": 27, "entities_text": ["netherlands"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Netherlands"]},
+{"index": 28, "entities_text": ["president", "brazil"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/President_of_Brazil"]},
+{"index": 29, "entities_text": ["france"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/France"]},
+{"index": 30, "entities_text": ["esther"], "wikipedia_urls": []
 
-OUTPUT:
-
-* Entities: ["grand bahama"]
-* Wikipedia URLs: ["https://en.wikipedia.org/wiki/Grand_Bahama"]
-
-INPUT: what character did j},
-{"index": 4, INPUT: what kind of money to take to bahamas?
-
-OUTPUT:
-
-"entities_text": [
-"bahamas"
-],
-"wikipedia_urls": [
-"https://en.wikipedia.org/wiki/Bahamian_dollar"
-]
-
-Explanation:
-
-The input text mentions " Bahamas". The named entity recognized is "Bahamas", which is a country. The Wikipedia URL provided is for the article on the Bahamian dollar, which is the official currency of the Bahamas.},
-{"index": 5, Sure, here are the named entities and their corresponding Wikipedia URLs for the given text:
-
-INPUT: what does the letters eu stand for?
-
-* No named entities found.
-
-INPUT: what country is the grand bahama island in?
-
-* Named entity: Grand Bahama
-* Wikipedia URL: <https://en.wikipedia.org/wiki/Grand_Bahama>
-
-INPUT: what character did john noble play in lord of the rings?
-
-* Named entity: John Noble
-* Wikipedia URL: <https://en.wikipedia.},
-{"index": 6, INPUT: Who does Joakim Noah play for?
-
-OUTPUT:
-
-"entities_text": ["Joakim Noah"],
-"wikipedia_urls": ["https://en.wikipedia.org/wiki/Joakim_Noah"]
-
-Explanation:
-
-* "Joakim Noah" is a named entity in the text, and it refers to a specific person.
-* The Wikipedia URL for Joakim Noah is "https://en.wikipedia.org/wiki/Joakim_Noah".},
-{"index": 7, INPUT: where are the nfl redskins from?
-
-OUTPUT:
-
-"entities_text": ["nfl", "redskins"],
-"wikipedia_urls": ["https://en.wikipedia.org/wiki/National_Football_League", "https://en.wikipedia.org/wiki/Washington_Redskins"]},
-{"index": 8, INPUT: where did saki live?
-
-OUTPUT:
-
-"entities_text": ["saki"],
-"wikipedia_urls": ["https://en.wikipedia.org/wiki/Saki"]},
-{"index": 9, INPUT: what does the letters eu stand for?
-
-OUTPUT:
-
-* Entities: []
-* Wikipedia URLs: []
-
-INPUT: what country is the grand bahama island in?
-
-OUTPUT:
-
-* Entities: ["Grand Bahama"]
-* Wikipedia URLs: ["https://en.wikipedia.org/wiki/Grand_Bahama"]
-
-INPUT: what character did john noble play in lord of the rings?
-
-OUTPUT:
-
-* Entities: ["John Noble", "Lord of the Rings"]},
-{"index": 10, INPUT: what time zone am i in cleveland ohio?
-
-OUTPUT:
-
-"entities_text": ["cleveland", "ohio"],
-"wikipedia_urls": ["https://en.wikipedia.org/wiki/Cleveland", "https://en.wikipedia.org/wiki/Ohio"]},
-{"index": 11, INPUT: Who did Draco Malfoy end up marrying?
-
-OUTPUT:
-
-"entities_text": ["draco malfoy"],
-"wikipedia_urls": ["https://en.wikipedia.org/wiki/Draco_Malfoy"]},
-{"index": 12, INPUT: which countries border the us?
-
-OUTPUT:
-
-"entities_text": ["canada", "mexico"],
-"wikipedia_urls": ["https://en.wikipedia.org/wiki/Canada–United_States_border", "https://en.wikipedia.org/wiki/Mexico–United_States_border"]},
-{"index": 13, INPUT: where is rome italy located on a map?
-
-OUTPUT:
-
-"entities_text": ["rome", "italy"],
-"wikipedia_urls": ["https://en.wikipedia.org/wiki/Rome", "https://en.wikipedia.org/wiki/Italy"]},
-{"index": 14, INPUT: what is nina dobrev nationality?
-
-OUTPUT:
-
-"entities_text": ["nina dobrev"],
-"wikipedia_urls": ["https://en.wikipedia.org/wiki/Nina_Dobrev"]},
-{"index": 15, INPUT: which kennedy died first?
-
-OUTPUT:
-
-"entities_text": ["kennedy"],
-"wikipedia_urls": ["https://en.wikipedia.org/wiki/John_F._Kennedy", "https://en.wikipedia.org/wiki/Robert_F._Kennedy", "https://en.wikipedia.org/wiki/Ted_Kennedy"]
-
-Note: There are several people named Kennedy who have died, including John F. Kennedy, Robert F. Kennedy, and Ted Kennedy. Without more context, it's}
+Explanation: Esther is a biblical figure and there is no specific city associated with her in the text. Therefore, there are no Wikipedia URLs to provide.},
+{"index": 31, "entities_text": ["toronto maple leafs"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Toronto_Maple_Leafs"]},
+{"index": 32, "entities_text": ["saint nicholas"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Saint_Nicholas"]},
+{"index": 33, "entities_text": ["cher", "son"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Cher", "https://en.wikipedia.org/wiki/Elijah_Blue"]},
+{"index": 34, "entities_text": ["andrew jackson"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Andrew_Jackson"]},
+{"index": 35, "entities_text": ["hampton", "va"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Hampton,_Virginia"]},
+{"index": 36, "entities_text": ["harry potter"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Harry_Potter_(book)"]},
+{"index": 37, "entities_text": ["william shakespeare"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/William_Shakespeare"]},
+{"index": 38, "entities_text": ["heathrow airport"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Heathrow_Airport"]},
+{"index": 39, "entities_text": ["josh hutcherson"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Josh_Hutcherson"]},
+{"index": 40, "entities_text": ["san francisco giants"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/San_Francisco_Giants"]},
+{"index": 41, "entities_text": ["william jennings bryan"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/William_Jennings_Bryan"]},
+{"index": 42, "entities_text": ["frederick douglass"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Frederick_Douglass"]},
+{"index": 43, "entities_text": ["queen victoria"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Queen_Victoria"]},
+{"index": 44, "entities_text": ["sally field"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Sally_Field"]},
+{"index": 45, "entities_text": ["sherlock holmes"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Sherlock_Holmes"]},
+{"index": 46, "entities_text": ["portuguese"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Portuguese_language", "https://en.wikipedia.org/wiki/List_of_countries_where_Portuguese_is_an_official_language"]},
+{"index": 47, "entities_text": ["walt disney"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Walt_Disney"]},
+{"index": 48, "entities_text": ["bush"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Bush_(band)"]},
+{"index": 49, "entities_text": ["tupac"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Tupac_Shakur"]},
+{"index": 50, "entities_text": ["australia"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Australia"]}
 ]

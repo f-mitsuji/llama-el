@@ -4,7 +4,7 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 from pipeline.data_reader import read_json_file
 
 
-def get_wikidata_ids(url):
+def get_wikidata_ids(url):  # urlに空白が含まれているとエラー起きる対策後でする
     try:
         sparql_wikidata = SPARQLWrapper(
             "https://query.wikidata.org/sparql",
@@ -54,5 +54,4 @@ def wikipedia_url_to_wikidata_id(model, dataset):
                  for data_point in entity_url_data]
 
     with open(output_file_path, "w", encoding="UTF-8") as output_file:
-        json.dump(data_list, output_file,
-                  ensure_ascii=False, indent=2)
+        json.dump(data_list, output_file, ensure_ascii=False, indent=2)

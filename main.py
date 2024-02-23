@@ -42,7 +42,7 @@ def main():
     if args.task == 'url':
         entity_wikipedia_url_extractor(args.model, args.dataset)
     elif args.task == 'id':
-        wikipedia_url_to_wikidata_id()
+        wikipedia_url_to_wikidata_id(args.model, args.dataset)
     elif args.task == 'eval':
         calculate_metrics()
     else:

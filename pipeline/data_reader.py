@@ -12,6 +12,12 @@ def read_dataset_file(dataset, file_path):
         return data
 
 
+def read_json_file(file_path):
+    with open(file_path, "r", encoding="UTF-8") as input_file:
+        data = json.load(input_file)
+    return data
+
+
 def get_few_shots(dataset):
     if dataset == 'lcquad2':
         return f'''INPUT: What does emigration mean?

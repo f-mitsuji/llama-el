@@ -45,7 +45,7 @@ def write_json_file(output_file_path, data, model, system_prompt, dataset):
             output_file.write("\n")
         output_file.write("]")
 
-        time.sleep(1)
+        time.sleep(1)  # 最低0.1 2024/2/23
 
 
 def entity_wikipedia_url_extractor(model, dataset):

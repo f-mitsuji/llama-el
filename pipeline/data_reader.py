@@ -2,7 +2,7 @@ import json
 
 
 def read_dataset_file(dataset, file_path):
-    if dataset == "lcquad2" or "webqsp":
+    if dataset == "lcquad2" or dataset == "webqsp":
         with open(file_path, "r", encoding="UTF-8") as input_file:
             data = json.load(input_file)
         return data

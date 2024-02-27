@@ -1,19 +1,15 @@
-import replicate
 import time
+
+import replicate
 from dotenv import load_dotenv
+
 from pipeline.data_reader import get_few_shots, read_dataset_file
 
 load_dotenv()
 
 
 def ChatCompletion(model, prompt, system_prompt):
-    output = replicate.run(
-        model,
-        input={
-            "system_prompt": system_prompt,
-            "prompt": prompt,
-            "temperature": 0.01}
-    )
+    output = replicate.run(model, input={"system_prompt": system_prompt, "prompt": prompt, "temperature": 0.01})
     return "".join(output)
 
 
@@ -29,16 +25,14 @@ def write_json_file(output_file_path, data, model, system_prompt, dataset):
             elif dataset == "webqsp":
                 input_text = item.get("utterance", None)
 
-            if input_text is not None and input_text != "n/a":  # データセットのEL対象文に空値と'n/a'がある
-                output = ChatCompletion(                        # その場合要素が空値のデータを返す
-                    model,
-                    prompt=f'''INPUT: {input_text}\nOUTPUT:''',
-                    system_prompt=system_prompt
-                )
+            # データセットのEL対象文に空値と'n/a'がある．その場合要素が空値のデータを返す
+            if input_text is not None and input_text != "n/a":
+                output = ChatCompletion(model, prompt=f"""INPUT: {input_text}\nOUTPUT:""", system_prompt=system_prompt)
             else:
-                output = '"entities_text": [], "wikipedia_urls": []'
+                output = '{"entities_text": [], "wikipedia_urls": []}'
 
-            output_file.write(f'{{"index": {i}, {output}}}')
+            # output_file.write(f'{{"index": {i}, {output}}}')
+            output_file.write(output)
 
             if i < data_length:
                 output_file.write(",")
@@ -49,15 +43,16 @@ def write_json_file(output_file_path, data, model, system_prompt, dataset):
 
 
 def entity_wikipedia_url_extractor(model, dataset):
-    INPUT_FILE_PATH = f'datasets/test_datasets/{dataset}_test.json'
+    INPUT_FILE_PATH = f"datasets/test_datasets/{dataset}_test.json"
     # INPUT_FILE_PATH = 'datasets/test_datasets/test.json'
-    OUTPUT_FILE_PATH = f'result/{dataset}/{model}/wikipedia_url.json'
+    OUTPUT_FILE_PATH = f"result/{dataset}/{model}/wikipedia_url.json"
+    # OUTPUT_FILE_PATH = f'result/{dataset}/{model}/wikipedia_url_test.json'
     data = read_dataset_file(dataset, INPUT_FILE_PATH)
     model = f"meta/{model}-chat"
-    system_prompt = f'''Extract named entities from the text and provide their Wikipedia URLs according to the following examples.
-Never output any sentences, explanations or reasons other than the value of each key.
+    system_prompt = f""""Extract named entities from the text and provide their Wikipedia URLs, as in the examples below.
+Do not output any text other than the keys and values in JSON.
 
 examples:
-{get_few_shots(dataset)}'''
+{get_few_shots(dataset)}"""
 
-    write_json_file(OUTPUT_FILE_PATH, data, model, system_prompt, dataset)
+    write_json_file(OUTPUT_FILE_PATH, data[3691:], model, system_prompt, dataset)

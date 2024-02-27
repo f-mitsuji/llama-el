@@ -43,10 +43,11 @@ def write_json_file(output_file_path, data, model, system_prompt, dataset):
 
 
 def entity_wikipedia_url_extractor(model, dataset):
-    INPUT_FILE_PATH = f"datasets/test_datasets/{dataset}_test.json"
-    # INPUT_FILE_PATH = 'datasets/test_datasets/test.json'
+    file_extension = ".txt" if dataset == "simpleqs" else ".json"
+    INPUT_FILE_PATH = f"datasets/test_datasets/{dataset}_test{file_extension}"
     OUTPUT_FILE_PATH = f"result/{dataset}/{model}/wikipedia_url.json"
-    # OUTPUT_FILE_PATH = f'result/{dataset}/{model}/wikipedia_url_test.json'
+    # INPUT_FILE_PATH = "datasets/test_datasets/test.txt"
+    # OUTPUT_FILE_PATH = f"result/{dataset}/{model}/wikipedia_url_test.json"
     data = read_dataset_file(dataset, INPUT_FILE_PATH)
     model = f"meta/{model}-chat"
     system_prompt = f""""Extract named entities from the text and provide their Wikipedia URLs, as in the examples below.
@@ -55,4 +56,4 @@ Do not output any text other than the keys and values in JSON.
 examples:
 {get_few_shots(dataset)}"""
 
-    write_json_file(OUTPUT_FILE_PATH, data[3691:], model, system_prompt, dataset)
+    write_json_file(OUTPUT_FILE_PATH, data, model, system_prompt, dataset)

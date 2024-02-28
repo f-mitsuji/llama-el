@@ -39,7 +39,8 @@ def calculate_evaluation_metrics(
 
 
 def evaluate_model_prediction(model: str, dataset: str) -> None:
-    correct_wikidata_file_path = f"datasets/test_datasets/{dataset}_test.json"
+    file_extension = ".txt" if dataset == "simpleqs" else ".json"
+    correct_wikidata_file_path = f"datasets/test_datasets/{dataset}_test{file_extension}"
     predicted_wikidata_file_path = f"result/{dataset}/{model}/wikidata_id.json"
 
     correct_wikidata_ids = read_correct_wikidata_ids(correct_wikidata_file_path)

@@ -75,11 +75,7 @@ INPUT: what is the gender of james hendry?
 OUTPUT: "entities_text": ["james hendry"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/James_Hendry_(obstetrician)"]"""
 
     elif dataset == "webqsp":
-        return """Extract named entities from the text and provide their Wikipedia URLs according to the following examples.
-Never output any sentences, explanations or reasons other than the value of each key.
-
-examples:
-INPUT: what does the letters eu stand for?
+        return """INPUT: what does the letters eu stand for?
 OUTPUT: "entities_text": [], "wikipedia_urls": []
 
 INPUT: what country is the grand bahama island in?

@@ -19,11 +19,12 @@ def read_json_file(file_path):
     return data
 
 
-def read_correct_wikidata_ids(file_path):
+def read_correct_wikidata_ids(file_path, dataset):
     correct_wikidata_ids = []
 
-    with open(file_path, "r", encoding="UTF-8") as file:
-        data = json.load(file)
+    if dataset == "lcquad2" or dataset == "webqsp":
+        with open(file_path, "r", encoding="UTF-8") as file:
+            data = json.load(file)
 
         for entry in data:
             entities = entry.get("entities", [])
@@ -34,7 +35,15 @@ def read_correct_wikidata_ids(file_path):
             else:
                 correct_wikidata_ids.append(wikidata_ids)
 
-    return correct_wikidata_ids
+        return correct_wikidata_ids
+
+    elif dataset == "simpleqs":
+        with open(file_path, "r", encoding="UTF-8") as file:
+            for line in file:
+                correct_wikidata_id = line.strip().split("\t")[0]
+                correct_wikidata_ids.append(correct_wikidata_id)
+
+        return correct_wikidata_ids
 
 
 def read_predicted_wikidata_ids(file_path):

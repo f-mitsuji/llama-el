@@ -8,7 +8,7 @@ from pipeline.data_reader import get_few_shots, read_dataset_file
 load_dotenv()
 
 
-def ChatCompletion(model, prompt, system_prompt):
+def ChatCompletion(model: str, prompt: str, system_prompt: str) -> str:
     output = replicate.run(model, input={"system_prompt": system_prompt, "prompt": prompt, "temperature": 0.01})
     return "".join(output)
 
@@ -17,6 +17,7 @@ def write_json_file(output_file_path, data, model, system_prompt, dataset):
     with open(output_file_path, "a", encoding="UTF-8") as output_file:
         output_file.write("[")
         data_length = len(data)
+
         for i, item in enumerate(data, start=1):
             if dataset == "lcquad2":
                 input_text = item.get("question", None)
@@ -42,7 +43,7 @@ def write_json_file(output_file_path, data, model, system_prompt, dataset):
         time.sleep(1)  # 最低0.1 2024/2/23
 
 
-def entity_wikipedia_url_extractor(model, dataset):
+def entity_wikipedia_url_extractor(model: str, dataset: str) -> None:
     file_extension = ".txt" if dataset == "simpleqs" else ".json"
     INPUT_FILE_PATH = f"datasets/test_datasets/{dataset}_test{file_extension}"
     OUTPUT_FILE_PATH = f"result/{dataset}/{model}/wikipedia_url.json"
@@ -56,4 +57,4 @@ Do not output any text other than the keys and values in JSON.
 examples:
 {get_few_shots(dataset)}"""
 
-    write_json_file(OUTPUT_FILE_PATH, data, model, system_prompt, dataset)
+    write_json_file(OUTPUT_FILE_PATH, data[8945:], model, system_prompt, dataset)

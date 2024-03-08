@@ -2,10 +2,8 @@ import json
 
 
 def read_dataset_file(dataset, file_path):
-    if dataset == "lcquad2" or dataset == "webqsp":
-        with open(file_path, "r", encoding="UTF-8") as input_file:
-            data = json.load(input_file)
-        return data
+    if dataset in ["lcquad2", "webqsp"]:
+        return read_json_file(file_path)
 
     elif dataset == "simpleqs":
         with open(file_path, "r", encoding="UTF-8") as input_file:
@@ -15,16 +13,14 @@ def read_dataset_file(dataset, file_path):
 
 def read_json_file(file_path):
     with open(file_path, "r", encoding="UTF-8") as input_file:
-        data = json.load(input_file)
-    return data
+        return json.load(input_file)
 
 
 def read_correct_wikidata_ids(file_path, dataset):
     correct_wikidata_ids = []
 
-    if dataset == "lcquad2" or dataset == "webqsp":
-        with open(file_path, "r", encoding="UTF-8") as file:
-            data = json.load(file)
+    if dataset in ["lcquad2", "webqsp"]:
+        data = read_json_file(file_path)
 
         for entry in data:
             entities = entry.get("entities", [])
@@ -49,17 +45,16 @@ def read_correct_wikidata_ids(file_path, dataset):
 def read_predicted_wikidata_ids(file_path):
     predicted_wikidata_ids = []
 
-    with open(file_path, "r", encoding="UTF-8") as file:
-        data = json.load(file)
+    data = read_json_file(file_path)
 
-        for entry in data:
-            entities = entry.get("wikidata_ids", [])
-            wikidata_ids = [entity for entity in entities if entity is not None]
+    for entry in data:
+        entities = entry.get("wikidata_ids", [])
+        wikidata_ids = [entity for entity in entities if entity is not None]
 
-            if not wikidata_ids:
-                predicted_wikidata_ids.append([""])
-            else:
-                predicted_wikidata_ids.append(wikidata_ids)
+        if not wikidata_ids:
+            predicted_wikidata_ids.append([""])
+        else:
+            predicted_wikidata_ids.append(wikidata_ids)
 
     return predicted_wikidata_ids
 
@@ -86,12 +81,9 @@ OUTPUT: "entities_text": ["james hendry"], "wikipedia_urls": ["https://en.wikipe
     elif dataset == "webqsp":
         return """INPUT: what does the letters eu stand for?
 OUTPUT: "entities_text": [], "wikipedia_urls": []
-
 INPUT: what country is the grand bahama island in?
 OUTPUT: "entities_text": ["grand bahama"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Grand_Bahama"]
-
 INPUT: what character did john noble play in lord of the rings?
 OUTPUT: "entities_text": ["john noble", "lord of the rings"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/John_Noble", "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Two_Towers"]
-
 INPUT: what city is the state capital of washington?
 OUTPUT: "entities_text": ["washington"], "wikipedia_urls": ["https://en.wikipedia.org/wiki/Washington_(state)"]"""

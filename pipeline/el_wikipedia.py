@@ -13,18 +13,21 @@ def ChatCompletion(model: str, prompt: str, system_prompt: str) -> str:
     return "".join(output)
 
 
-def write_json_file(output_file_path, data, model, system_prompt, dataset):
+# dataの型ヒントは扱うデータのみ
+def write_json_file(
+    output_file_path: str, data: list[dict[str, str]] | list[str], model: str, system_prompt: str, dataset: str
+) -> None:
     with open(output_file_path, "a", encoding="UTF-8") as output_file:
         output_file.write("[")
         data_length = len(data)
 
         for i, item in enumerate(data, start=1):
             if dataset == "lcquad2":
-                input_text = item.get("question", None)
+                input_text = item.get("question", None)  # type:ignore
             elif dataset == "simpleqs":
-                input_text = item.split("\t")[3]
+                input_text = item.split("\t")[3]  # type:ignore
             elif dataset == "webqsp":
-                input_text = item.get("utterance", None)
+                input_text = item.get("utterance", None)  # type:ignore
 
             # データセットのEL対象文に空値と'n/a'がある．その場合要素が空値のデータを返す
             if input_text is not None and input_text != "n/a":

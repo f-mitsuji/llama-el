@@ -12,7 +12,6 @@ def main():
         "-t",
         "--task",
         type=str,
-        # default='url',
         choices=["url", "id", "eval"],
         help="Task",
     )
@@ -21,8 +20,7 @@ def main():
         "-m",
         "--model",
         type=str,
-        default="llama-2-70b",
-        choices=["llama-2-7b", "llama-2-13b", "llama-2-70b"],
+        choices=["llama-2-7b", "llama-2-13b", "llama-2-70b", "Swallow-7b"],
         help="Model",
     )
 
@@ -30,15 +28,22 @@ def main():
         "-d",
         "--dataset",
         type=str,
-        # default='webqsp',
         choices=["lcquad2", "simpleqs", "webqsp"],
         help="Dataset",
+    )
+
+    parser.add_argument(
+        "-l",
+        "--language",
+        type=str,
+        choices=["english", "japanese"],
+        help="Language",
     )
 
     args = parser.parse_args()
 
     if args.task == "url":
-        entity_wikipedia_url_extractor(args.model, args.dataset)
+        entity_wikipedia_url_extractor(args.model, args.dataset, args.language)
     elif args.task == "id":
         wikipedia_url_to_wikidata_id(args.model, args.dataset)
     elif args.task == "eval":

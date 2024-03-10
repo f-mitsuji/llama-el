@@ -59,6 +59,18 @@ def read_predicted_wikidata_ids(file_path):
     return predicted_wikidata_ids
 
 
+def read_predicted_wikipedia_urls(file_path):
+    predicted_wikipedia_urls = []
+
+    data = read_json_file(file_path)
+
+    for entry in data:
+        wikipedia_urls = entry.get("wikipedia_urls", [])
+        predicted_wikipedia_urls.append(wikipedia_urls)
+
+    return predicted_wikipedia_urls
+
+
 def get_few_shots(dataset, language):
     responses = {
         (

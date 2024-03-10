@@ -1,4 +1,5 @@
 from pipeline.data_reader import read_correct_wikidata_ids, read_predicted_wikidata_ids
+from pipeline.llm_comparison import compare_llm_predictions
 
 
 def calculate_evaluation_metrics(
@@ -58,6 +59,7 @@ def evaluate_model_prediction(model: str, dataset: str) -> None:
     precision, recall, f1 = calculate_evaluation_metrics(correct_wikidata_ids, predicted_wikidata_ids, dataset)
 
     print_results(precision, recall, f1)
+    compare_llm_predictions(correct_wikidata_ids, predicted_wikidata_ids, model, dataset, correct_wikidata_file_path)
 
 
 def print_results(precision: float, recall: float, f1: float) -> None:

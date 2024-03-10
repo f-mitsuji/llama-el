@@ -33,7 +33,7 @@ def save_comparison_results(common_missed, gpt4_only_missed, llama2_only_missed,
         common_missed,
         columns=[
             "Question Number",
-            "question",
+            "Question",
             "Correct IDs",
             "Missed IDs (GPT-4)",
             "Wikipedia URLs (GPT-4)",

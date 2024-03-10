@@ -43,11 +43,11 @@ def save_comparison_results(common_missed, gpt4_only_missed, llama2_only_missed,
     )
     df_gpt4_only = pd.DataFrame(
         gpt4_only_missed,
-        columns=["Question Number", "Utterance", "Correct IDs", "Missed IDs (GPT-4)", "Wikipedia URLs (GPT-4)"],
+        columns=["Question Number", "Question", "Correct IDs", "Missed IDs (GPT-4)", "Wikipedia URLs (GPT-4)"],
     )
     df_llama2_only = pd.DataFrame(
         llama2_only_missed,
-        columns=["Question Number", "Utterance", "Correct IDs", "Missed IDs (Llama 2)", "Wikipedia URLs (Llama 2)"],
+        columns=["Question Number", "Question", "Correct IDs", "Missed IDs (Llama 2)", "Wikipedia URLs (Llama 2)"],
     )
 
     with pd.ExcelWriter(output_path) as writer:

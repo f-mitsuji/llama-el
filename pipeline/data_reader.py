@@ -1,4 +1,5 @@
 import json
+import re
 
 
 def read_dataset_file(dataset, file_path):
@@ -19,19 +20,16 @@ def read_json_file(file_path):
 def read_correct_wikidata_ids(file_path, dataset):
     correct_wikidata_ids = []
 
-    if dataset in ["lcquad2", "webqsp"]:
+    if dataset == "lcquad2":
         data = read_json_file(file_path)
 
         for entry in data:
-            entities = entry.get("entities", [])
-            wikidata_ids = [entity for entity in entities if entity is not None]
-
+            sparql_wikidata = entry.get("sparql_wikidata", "")
+            wikidata_ids_match = re.findall(r"\bQ\d+\b", sparql_wikidata)
+            wikidata_ids = [match.strip() for match in wikidata_ids_match]
             if not wikidata_ids:
-                correct_wikidata_ids.append([""])
-            else:
-                correct_wikidata_ids.append(wikidata_ids)
-
-        return correct_wikidata_ids
+                wikidata_ids = [""]
+            correct_wikidata_ids.append(wikidata_ids)
 
     elif dataset == "simpleqs":
         with open(file_path, "r", encoding="UTF-8") as file:
@@ -39,7 +37,18 @@ def read_correct_wikidata_ids(file_path, dataset):
                 correct_wikidata_id = line.strip().split("\t")[0]
                 correct_wikidata_ids.append(correct_wikidata_id)
 
-        return correct_wikidata_ids
+    elif dataset == "webqsp":
+        data = read_json_file(file_path)
+
+        for entry in data:
+            entities = entry.get("entities", [])
+            wikidata_ids = [entity for entity in entities if entity is not None]
+            if not wikidata_ids:
+                correct_wikidata_ids.append([""])
+            else:
+                correct_wikidata_ids.append(wikidata_ids)
+
+    return correct_wikidata_ids
 
 
 def read_predicted_wikidata_ids(file_path):

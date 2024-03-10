@@ -48,7 +48,7 @@ def calculate_evaluation_metrics(
     return average_metrics.get("precision", 0), average_metrics.get("recall", 0), average_metrics.get("f1", 0)
 
 
-def evaluate_model_prediction(model: str, dataset: str) -> None:
+def evaluate_model_prediction(model: str, dataset: str, language: str) -> None:
     file_extension = ".txt" if dataset == "simpleqs" else ".json"
     correct_wikidata_file_path = f"datasets/test_datasets/{dataset}_test{file_extension}"
     predicted_wikidata_file_path = f"result/{dataset}/{model}/wikidata_id.json"
@@ -59,7 +59,9 @@ def evaluate_model_prediction(model: str, dataset: str) -> None:
     precision, recall, f1 = calculate_evaluation_metrics(correct_wikidata_ids, predicted_wikidata_ids, dataset)
 
     print_results(precision, recall, f1)
-    compare_llm_predictions(correct_wikidata_ids, predicted_wikidata_ids, model, dataset, correct_wikidata_file_path)
+    compare_llm_predictions(
+        correct_wikidata_ids, predicted_wikidata_ids, model, dataset, correct_wikidata_file_path, language
+    )
 
 
 def print_results(precision: float, recall: float, f1: float) -> None:

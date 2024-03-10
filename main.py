@@ -47,7 +47,7 @@ def main():
     elif args.task == "id":
         wikipedia_url_to_wikidata_id(args.model, args.dataset)
     elif args.task == "eval":
-        evaluate_model_prediction(args.model, args.dataset)
+        evaluate_model_prediction(args.model, args.dataset, args.language)
     else:
         raise NotImplementedError("Please select your task from ['url', 'id', 'eval'].")
 

@@ -4,16 +4,22 @@ from pipeline.data_reader import read_predicted_wikidata_ids
 def analyze_el_accuracy_by_class(
     correct_ids: list[list[str]] | list[str],
     predicted_ids: list[list[str]],
-    dataset: str,
     data: list[dict[str, list[str]]],
 ) -> tuple[dict[str, int], dict[str, int]]:
+    """英語WebQSPデータセットのTP, FNをクラスで分析する関数
+
+    Args:
+        correct_ids (list[list[str]] | list[str]): データセットの正解Wikidata ID
+        predicted_ids (list[list[str]]): LLMによる予測Wikidata ID
+        data (list[dict[str, list[str]]]): データセットのデータ（entity_classesキーのため）
+
+    Returns:
+        tuple[dict[str, int], dict[str, int]]: TP, FNそれぞれのクラス分析の結果
+    """
     true_positive_classes_count: dict[str, int] = {}
     false_negative_classes_count: dict[str, int] = {}
 
     for i, (true_ids, predicted_ids_for_line) in enumerate(zip(correct_ids, predicted_ids)):
-
-        if dataset == "simpleqs":
-            true_ids = [true_ids]  # type: ignore
 
         true_positive = set(predicted_ids_for_line) & set(true_ids)
         false_negatives = set(true_ids) - set(predicted_ids_for_line)
@@ -42,11 +48,9 @@ def compare_llm_by_class(
     data: list[dict[str, list[str]]],
 ):
     gpt4_ids = read_predicted_wikidata_ids(f"result/{dataset}/gpt-4/wikidata_id.json")
-    true_positive_class_gpt4, false_negative_class_gpt4 = analyze_el_accuracy_by_class(
-        correct_ids, gpt4_ids, dataset, data
-    )
+    true_positive_class_gpt4, false_negative_class_gpt4 = analyze_el_accuracy_by_class(correct_ids, gpt4_ids, data)
     true_positive_class_llama2, false_negative_class_llama2 = analyze_el_accuracy_by_class(
-        correct_ids, llama2_ids, dataset, data
+        correct_ids, llama2_ids, data
     )
 
     print(f"Llama2 FP Class: {true_positive_class_llama2}")

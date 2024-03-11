@@ -2,14 +2,15 @@ import json
 import re
 
 
-def read_dataset_file(dataset, file_path):
-    if dataset in ["lcquad2", "webqsp"]:
+def read_dataset_file(file_path):
+    if file_path.endswith(".json"):
         return read_json_file(file_path)
-
-    elif dataset == "simpleqs":
+    elif file_path.endswith(".txt"):
         with open(file_path, "r", encoding="UTF-8") as input_file:
             data = list(input_file)
         return data
+    else:
+        raise ValueError("Unsupported file format. Only .json and .txt files are supported.")
 
 
 def read_json_file(file_path):

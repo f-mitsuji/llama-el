@@ -61,7 +61,7 @@ def save_comparison_results(common_missed, gpt4_only_missed, llama2_only_missed,
 
 
 def compare_llm_predictions(correct_ids, llama2_ids, model, dataset, dataset_file_path, language):
-    data = read_dataset_file(dataset, dataset_file_path)
+    data = read_dataset_file(dataset_file_path)
     output_excel_path = f"result/{dataset}/{model}/gpt4-{model}-comparison.xlsx"
     gpt4_ids = read_predicted_wikidata_ids(f"result/{dataset}/gpt-4/wikidata_id.json")
     gpt4_urls = read_predicted_wikipedia_urls(f"result/{dataset}/gpt-4/wikipedia_url.json")

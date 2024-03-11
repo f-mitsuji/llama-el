@@ -1,9 +1,12 @@
+from pipeline.data_reader import read_predicted_wikidata_ids
+
+
 def analyze_el_accuracy_by_class(
     correct_ids: list[list[str]] | list[str],
     predicted_ids: list[list[str]],
     dataset: str,
     data: list[dict[str, list[str]]],
-) -> None:
+) -> tuple[dict[str, int], dict[str, int]]:
     true_positive_classes_count: dict[str, int] = {}
     false_negative_classes_count: dict[str, int] = {}
 
@@ -29,5 +32,24 @@ def analyze_el_accuracy_by_class(
             else:
                 false_negative_classes_count["Unknown"] = false_negative_classes_count.get("Unknown", 0) + 1
 
-    print(f"true_positive_classes: {true_positive_classes_count}")
-    print(f"false_negative_classes: {false_negative_classes_count}")
+    return true_positive_classes_count, false_negative_classes_count
+
+
+def compare_llm_by_class(
+    correct_ids: list[list[str]] | list[str],
+    llama2_ids: list[list[str]],
+    dataset: str,
+    data: list[dict[str, list[str]]],
+):
+    gpt4_ids = read_predicted_wikidata_ids(f"result/{dataset}/gpt-4/wikidata_id.json")
+    true_positive_class_gpt4, false_negative_class_gpt4 = analyze_el_accuracy_by_class(
+        correct_ids, gpt4_ids, dataset, data
+    )
+    true_positive_class_llama2, false_negative_class_llama2 = analyze_el_accuracy_by_class(
+        correct_ids, llama2_ids, dataset, data
+    )
+
+    print(f"Llama2 FP Class: {true_positive_class_llama2}")
+    print(f"Llama2 FN Class: {false_negative_class_llama2}")
+    print(f"GPT-4 TP Class: {true_positive_class_gpt4}")
+    print(f"GPT-4 FN Class: {false_negative_class_gpt4}")

@@ -1,10 +1,10 @@
-from pipeline.class_analysis import analyze_el_accuracy_by_class
 from pipeline.data_reader import (
     read_correct_wikidata_ids,
     read_dataset_file,
     read_predicted_wikidata_ids,
 )
 from pipeline.llm_comparison import compare_llm_predictions
+from pipeline.llm_comparison_by_class import compare_llm_by_class
 
 
 def calculate_evaluation_metrics(
@@ -66,7 +66,7 @@ def evaluate_model_prediction(model: str, dataset: str, language: str) -> None:
 
     print_results(precision, recall, f1)
     if dataset == "webqsp" and language == "english":
-        analyze_el_accuracy_by_class(correct_wikidata_ids, predicted_wikidata_ids, dataset, data)
+        compare_llm_by_class(correct_wikidata_ids, predicted_wikidata_ids, dataset, data)
     if dataset in ["lcquad2", "webqsp"] and language == "english":
         response = input("Would you like to compare LLM predictions? (yes/no): ").strip().lower()
         if response == "yes":

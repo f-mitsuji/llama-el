@@ -6,25 +6,25 @@ def analyze_el_accuracy_by_class(
     predicted_ids: list[list[str]],
     data: list[dict[str, list[str]]],
 ) -> tuple[dict[str, int], dict[str, int]]:
-    """英語WebQSPデータセットのTP, FNをクラスで分析する関数
+    """英語WebQSPデータセットに対するEL結果のTP, FNをクラスで分析する関数
 
     Args:
         correct_ids (list[list[str]] | list[str]): データセットの正解Wikidata ID
         predicted_ids (list[list[str]]): LLMによる予測Wikidata ID
-        data (list[dict[str, list[str]]]): データセットのデータ（entity_classesキーのため）
+        data (list[dict[str, list[str]]]): データセットのデータ
 
     Returns:
-        tuple[dict[str, int], dict[str, int]]: TP, FNそれぞれのクラス分析の結果
+        tuple[dict[str, int], dict[str, int]]: TP, FNそれぞれのエンティティクラス別の数
     """
     true_positive_classes_count: dict[str, int] = {}
     false_negative_classes_count: dict[str, int] = {}
 
     for i, (true_ids, predicted_ids_for_line) in enumerate(zip(correct_ids, predicted_ids)):
 
-        true_positive = set(predicted_ids_for_line) & set(true_ids)
+        true_positives = set(predicted_ids_for_line) & set(true_ids)
         false_negatives = set(true_ids) - set(predicted_ids_for_line)
 
-        for entity_id in true_positive:
+        for entity_id in true_positives:
             if entity_id in data[i]["entities"]:
                 entity_class = data[i]["entity_classes"][data[i]["entities"].index(entity_id)]
                 true_positive_classes_count[entity_class] = true_positive_classes_count.get(entity_class, 0) + 1

@@ -24,8 +24,6 @@ def calculate_evaluation_metrics(
     metrics: dict[str, list[float]] = {"precision": [], "recall": [], "f1": []}
 
     for true_ids, predicted_ids_for_line in zip(correct_ids, predicted_ids):
-        true_positive, false_positive = 0, 0
-
         if dataset == "simpleqs":
             true_ids = [true_ids]  # type: ignore
 

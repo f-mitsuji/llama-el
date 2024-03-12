@@ -3,7 +3,7 @@ from pipeline.data_reader import (
     read_dataset_file,
     read_predicted_wikidata_ids,
 )
-from pipeline.eL_result_to_excel import compare_llm_predictions
+from pipeline.el_result_to_excel import compare_llm_predictions
 from pipeline.llm_comparison_by_class import compare_llm_by_class
 
 

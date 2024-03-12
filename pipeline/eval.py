@@ -3,7 +3,7 @@ from pipeline.data_reader import (
     read_dataset_file,
     read_predicted_wikidata_ids,
 )
-from pipeline.llm_comparison import compare_llm_predictions
+from pipeline.eL_result_to_excel import compare_llm_predictions
 from pipeline.llm_comparison_by_class import compare_llm_by_class
 
 
@@ -66,7 +66,7 @@ def evaluate_model_prediction(model: str, dataset: str, language: str) -> None:
     if dataset == "webqsp" and language == "english":
         compare_llm_by_class(correct_wikidata_ids, predicted_wikidata_ids, dataset, data)
     if dataset in ["lcquad2", "webqsp"] and language == "english":
-        response = input("Would you like to compare LLM predictions? (yes/no): ").strip().lower()
+        response = input("Would you like to output excel file? (yes/no): ").strip().lower()
         if response == "yes":
             compare_llm_predictions(
                 correct_wikidata_ids, predicted_wikidata_ids, model, dataset, correct_wikidata_file_path, language

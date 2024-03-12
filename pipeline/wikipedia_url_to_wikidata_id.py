@@ -53,7 +53,7 @@ def process_data_point(data_point: dict[str, list[str]]) -> dict[str, int | str 
     return {"id": data_point.get("id", ""), "entities_text": labels, "wikidata_ids": wikidata_ids_for_line}
 
 
-def wikipedia_url_to_wikidata_id(model: str, dataset: str) -> None:
+def convert_wikipedia_url_to_wikidata_id(model: str, dataset: str) -> None:
     # input_file_path = f"result/{dataset}/{model}/wikipedia_url_test.json"
     # output_file_path = f"result/{dataset}/{model}/wikidata_id_test.json"
     input_file_path = f"result/{dataset}/{model}/wikipedia_url.json"

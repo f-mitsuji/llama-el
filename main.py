@@ -1,8 +1,8 @@
 import argparse
 
-from pipeline.el_wikidata import wikipedia_url_to_wikidata_id
 from pipeline.el_wikipedia import entity_wikipedia_url_extractor
 from pipeline.eval import evaluate_model_prediction
+from pipeline.wikipedia_url_to_wikidata_id import convert_wikipedia_url_to_wikidata_id
 
 
 def main():
@@ -45,7 +45,7 @@ def main():
     if args.task == "url":
         entity_wikipedia_url_extractor(args.model, args.dataset, args.language)
     elif args.task == "id":
-        wikipedia_url_to_wikidata_id(args.model, args.dataset)
+        convert_wikipedia_url_to_wikidata_id(args.model, args.dataset)
     elif args.task == "eval":
         evaluate_model_prediction(args.model, args.dataset, args.language)
     else:

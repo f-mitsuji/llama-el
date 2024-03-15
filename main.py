@@ -20,7 +20,7 @@ def main():
         "-m",
         "--model",
         type=str,
-        choices=["llama-2-7b", "llama-2-13b", "llama-2-70b", "Swallow-7b"],
+        choices=["llama-2-7b", "llama-2-13b", "llama-2-70b", "Swallow-7b", "Swallow-13b"],
         help="Model",
     )
 
@@ -45,7 +45,7 @@ def main():
     if args.task == "url":
         entity_wikipedia_url_extractor(args.model, args.dataset, args.language)
     elif args.task == "id":
-        convert_wikipedia_url_to_wikidata_id(args.model, args.dataset)
+        convert_wikipedia_url_to_wikidata_id(args.model, args.dataset, args.language)
     elif args.task == "eval":
         evaluate_model_prediction(args.model, args.dataset, args.language)
     else:

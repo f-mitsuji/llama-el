@@ -52,6 +52,8 @@ def process_data_point(data_point: dict[str, list[str]], language: str) -> dict[
     for url in wikipedia_urls:
         wikidata_ids = get_wikidata_ids(url, language)
         wikidata_ids_for_line.extend(wikidata_ids or [""])
+    # index = data_point.get("id", "")
+    # print(f"index: {index}, id: {wikidata_ids_for_line}")
 
     return {"id": data_point.get("id", ""), "entities_text": labels, "wikidata_ids": wikidata_ids_for_line}
 

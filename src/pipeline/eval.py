@@ -22,9 +22,9 @@ def calculate_evaluation_metrics(
     """
     metrics: dict[str, list[float]] = {"precision": [], "recall": [], "f1": []}
 
-    for true_ids, predicted_ids_for_line in zip(correct_ids, predicted_ids):
+    for true_ids, predicted_ids_for_line in zip(correct_ids, predicted_ids, strict=True):
         if dataset == "simpleqs":
-            true_ids = [true_ids]  # type: ignore
+            true_ids = [true_ids]  # noqa: PLW2901
 
         true_positive = len(set(predicted_ids_for_line) & set(true_ids))
         false_positive = len(set(predicted_ids_for_line) - set(true_ids))

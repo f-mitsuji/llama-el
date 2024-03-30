@@ -5,7 +5,7 @@ from pipeline.eval import evaluate_model_prediction
 from pipeline.wikipedia_url_to_wikidata_id import convert_wikipedia_url_to_wikidata_id
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(description="Arguments of input for task functions")
 
     parser.add_argument(
@@ -49,7 +49,8 @@ def main():
     elif args.task == "eval":
         evaluate_model_prediction(args.model, args.dataset, args.language)
     else:
-        raise NotImplementedError("Please select your task from ['url', 'id', 'eval'].")
+        error_msg = "Please select your task from ['url', 'id', 'eval']."
+        raise NotImplementedError(error_msg)
 
 
 if __name__ == "__main__":

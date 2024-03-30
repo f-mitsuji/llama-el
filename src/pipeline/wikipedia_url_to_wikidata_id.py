@@ -1,10 +1,12 @@
 import json
 import time
+from pathlib import Path
 from urllib.parse import quote
 
+from pipeline.data_reader import read_json_file
 from SPARQLWrapper import JSON, SPARQLWrapper
 
-from pipeline.data_reader import read_json_file
+WIKIDATA_SPARQL_ENDPOINT = "https://query.wikidata.org/sparql"
 
 
 def get_wikidata_ids(url: str, language: str) -> list[str]:
@@ -19,15 +21,13 @@ def get_wikidata_ids(url: str, language: str) -> list[str]:
     try:
         if language == "japanese":
             url = quote(url, safe=":/")
-        sparql_wikidata = SPARQLWrapper("https://query.wikidata.org/sparql", returnFormat="json")
-        query = """
+        sparql_wikidata = SPARQLWrapper(WIKIDATA_SPARQL_ENDPOINT, returnFormat="json")
+        query = f"""
         PREFIX schema: <http://schema.org/>
         SELECT * WHERE {{
-            <{0}> schema:about ?item .
+            <{url}> schema:about ?item .
         }}
-        """.format(
-            url
-        )
+        """
         sparql_wikidata.setQuery(query)
         sparql_wikidata.setReturnFormat(JSON)
         results = sparql_wikidata.query().convert()
@@ -36,7 +36,7 @@ def get_wikidata_ids(url: str, language: str) -> list[str]:
 
         return [binding["item"]["value"].split("/")[-1] for binding in result_bindings]
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"Error fetching Wikidata IDs for URL {url}: {e}")
         time.sleep(10)
 
@@ -62,10 +62,10 @@ def convert_wikipedia_url_to_wikidata_id(model: str, dataset: str, language: str
     # input_file_path = f"result/{dataset}/{model}/wikipedia_url_test.json"
     # output_file_path = f"result/{dataset}/{model}/wikidata_id_test.json"
     input_file_path = f"result/{dataset}/{model}/wikipedia_url.json"
-    output_file_path = f"result/{dataset}/{model}/wikidata_id.json"
+    output_file_path = Path(f"result/{dataset}/{model}/wikidata_id.json")
 
     entity_url_data = read_json_file(input_file_path)
     data_list = [process_data_point(data_point, language) for data_point in entity_url_data]
 
-    with open(output_file_path, "w", encoding="UTF-8") as output_file:
-        json.dump(data_list, output_file, ensure_ascii=False, indent=2)
+    with output_file_path.open(mode="w", encoding="UTF-8") as f:
+        json.dump(data_list, f, ensure_ascii=False)

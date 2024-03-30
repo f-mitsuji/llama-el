@@ -1,5 +1,4 @@
 import pandas as pd
-
 from pipeline.data_reader import (
     read_dataset_file,
     read_predicted_wikidata_ids,
@@ -11,7 +10,7 @@ def compare_predictions(data, correct_ids, gpt4_ids, gpt4_urls, llama2_ids, llam
     common_missed, gpt4_only_missed, llama2_only_missed = [], [], []
 
     for i, (entry, correct_id, gpt4_id, llama2_id, gpt4_url, llama2_url) in enumerate(
-        zip(data, correct_ids, gpt4_ids, llama2_ids, gpt4_urls, llama2_urls), 1
+        zip(data, correct_ids, gpt4_ids, llama2_ids, gpt4_urls, llama2_urls, strict=False), 1
     ):
         key_for_question = "question"
         if language != "japanese" and dataset == "webqsp":
@@ -22,7 +21,7 @@ def compare_predictions(data, correct_ids, gpt4_ids, gpt4_urls, llama2_ids, llam
 
         if missed_id_gpt4 and missed_id_llama2:
             common_missed.append(
-                (i, entry[key_for_question], correct_id, missed_id_gpt4, gpt4_url, missed_id_llama2, llama2_url)
+                (i, entry[key_for_question], correct_id, missed_id_gpt4, gpt4_url, missed_id_llama2, llama2_url),
             )
         elif missed_id_gpt4:
             gpt4_only_missed.append((i, entry[key_for_question], correct_id, missed_id_gpt4, gpt4_url))
@@ -68,6 +67,13 @@ def compare_llm_predictions(correct_ids, llama2_ids, model, dataset, dataset_fil
     llama2_urls = read_predicted_wikipedia_urls(f"result/{dataset}/{model}/wikipedia_url.json")
 
     common_missed, gpt4_only_missed, llama2_only_missed = compare_predictions(
-        data, correct_ids, gpt4_ids, gpt4_urls, llama2_ids, llama2_urls, dataset, language
+        data,
+        correct_ids,
+        gpt4_ids,
+        gpt4_urls,
+        llama2_ids,
+        llama2_urls,
+        dataset,
+        language,
     )
     save_comparison_results(common_missed, gpt4_only_missed, llama2_only_missed, output_excel_path)

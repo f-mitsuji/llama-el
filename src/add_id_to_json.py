@@ -1,12 +1,13 @@
 import json
+from pathlib import Path
 
-file_path = ""  # idをつけるファイル名 例）"result/simpleqs/llama-2-70b/wikipedia_url.json"
+file_path_obj = Path("result/simpleqs/llama-2-70b/wikipedia_url.json")
 
-with open(file_path, "r", encoding="utf-8") as file:
-    data = json.load(file)
+with file_path_obj.open(encoding="utf-8") as f:
+    data = json.load(f)
 
 for i, item in enumerate(data):
     item["id"] = i + 1
 
-with open(file_path, "w") as file:
-    json.dump(data, file, indent=4)
+with file_path_obj.open(mode="w", encoding="utf-8") as f:
+    json.dump(data, f)

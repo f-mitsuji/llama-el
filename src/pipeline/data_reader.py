@@ -6,15 +6,16 @@ def read_dataset_file(file_path):
     if file_path.endswith(".json"):
         return read_json_file(file_path)
     elif file_path.endswith(".txt"):
-        with open(file_path, "r", encoding="UTF-8") as input_file:
+        with open(file_path, encoding="UTF-8") as input_file:
             data = list(input_file)
         return data
     else:
-        raise ValueError("Unsupported file format. Only .json and .txt files are supported.")
+        error_msg = "Unsupported file format. Only .json and .txt files are supported."
+        raise ValueError(error_msg)
 
 
 def read_json_file(file_path):
-    with open(file_path, "r", encoding="UTF-8") as input_file:
+    with open(file_path, encoding="UTF-8") as input_file:
         return json.load(input_file)
 
 
@@ -33,7 +34,7 @@ def read_correct_wikidata_ids(file_path, dataset):
             correct_wikidata_ids.append(wikidata_ids)
 
     elif dataset == "simpleqs":
-        with open(file_path, "r", encoding="UTF-8") as file:
+        with open(file_path, encoding="UTF-8") as file:
             for line in file:
                 correct_wikidata_id = line.strip().split("\t")[0]
                 correct_wikidata_ids.append(correct_wikidata_id)
